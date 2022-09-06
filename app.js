@@ -107,7 +107,6 @@ function diplayMenuItems(menuItems) {
         </article>`;
   });
   displayMenu = displayMenu.join("");
-  // console.log(displayMenu);
 
   sectionCenter.innerHTML = displayMenu;
 }
@@ -126,7 +125,8 @@ function displayMenuButtons() {
     },
     ["all"]
   );
-  // we can get the buttn category here amd append to btnContainer
+  console.log(categories);
+  // we can get the button category here and append to btnContainer
   categories.map(function (category) {
     btnContainer.innerHTML +=
       `<button type="button" class="filter-btn" data-id=${category}>
