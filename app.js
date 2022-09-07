@@ -118,14 +118,12 @@ function displayMenuButtons() {
       // array here is ["all"]
       // value here is the objects in the menu array
       if (!array.includes(value.category)) {
-        array.push(value.category);
-
+        array.push(value.category)
       }
       return array;
-    },
-    ["all"]
+    }, ['all']
   );
-  console.log(categories);
+
   // we can get the button category here and append to btnContainer
   categories.map(function (category) {
     btnContainer.innerHTML +=
@@ -136,10 +134,10 @@ function displayMenuButtons() {
 
   // filtered through the array and returned menuitem.category == category thn saved in MenuCategory
   // passed menuCategory as an argument to display each item though the filterBTns
-  const filterBtns = btnContainer.querySelectorAll(".filter-btn");
+  const filterBtns = document.querySelectorAll(".filter-btn");
   filterBtns.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
-      const category = e.currentTarget.dataset.id;
+      const category = e.target.dataset.id;
       const menuCategory = menu.filter(function (menuItem) {
         return menuItem.category === category
       });
