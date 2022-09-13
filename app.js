@@ -132,11 +132,13 @@ function displayMenuButtons() {
         </button>`;
   })
 
-  // filtered through the array and returned menuitem.category == category thn saved in MenuCategory
+  // filtered through the array and returned menuitem.category == category then saved in MenuCategory
   // passed menuCategory as an argument to display each item though the filterBTns
   const filterBtns = document.querySelectorAll(".filter-btn");
   filterBtns.forEach(function (btn) {
     btn.addEventListener("click", function (e) {
+
+      // i tried targetting the innerHtml but it wouldnt function so wnt for the data.id instead
       const category = e.target.dataset.id;
       const menuCategory = menu.filter(function (menuItem) {
         return menuItem.category === category
